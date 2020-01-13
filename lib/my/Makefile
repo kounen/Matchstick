@@ -29,6 +29,8 @@ SRCS	=	./binary_nbr.c \
 			./my_strcmp.c \
 			./my_strcat.c \
 			./my_strdup.c \
+			./my_print_error.c \
+			./my_str_isnum.c \
 	  		./switch_letter.c \
 			./my_strcpy.c \
 			./my_show_word_array.c \

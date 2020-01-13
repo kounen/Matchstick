@@ -22,6 +22,8 @@ int unit_size(int nb);
 char *hexa_nbr_x(long long nb);
 char *hexa_capital(int nb);
 int switch_letter_two(char *str, int i, va_list list);
+void my_print_error(char *string);
+int my_str_isnum(char *string);
 int switch_letter_one(char *str, int i, va_list list);
 int switch_letter_three(char *str, int i, va_list list);
 int octal_nbr(int nb);

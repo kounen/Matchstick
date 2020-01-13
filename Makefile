@@ -11,7 +11,9 @@ CC		=	gcc
 
 RM		=	rm -f
 
-SRCS	=	./
+SRCS	=	./src/main.c \
+			./src/manual.c \
+			./src/check_error.c
 
 OBJS	=	$(SRCS:.c=.o)
 

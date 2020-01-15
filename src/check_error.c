@@ -7,9 +7,9 @@
 
 #include "matchstick.h"
 
-int check_error_and_manual(int argc, char **argv)
+int check_error_and_manual(int ac, char **argv)
 {
-    if (argc < 2 || argc > 3) {
+    if (ac < 2 || (ac <= 2 && my_strcmp(argv[1], "-h\0") != 0) || ac > 3) {
         my_print_error("ERROR : not enough arguments, check -h.\n");
         return (ERROR);
     } if (my_strcmp(argv[1], "-h\0") == 0) {

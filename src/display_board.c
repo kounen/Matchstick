@@ -38,3 +38,27 @@ void display_game_board(int nbr_lines)
     board_line(nbr_lines);
     write(1, "\n", 1);
 }
+
+void display_update_board(matchstick_t *structure)
+{
+    int space = structure->nbr_lines - 1;
+
+    board_line(structure->nbr_lines);
+
+    int space = board->lines - 1;
+
+	board->stick[board->number_line - 1] -= board->number_matches;
+	print_window_of_board(board->lines);
+	for (int j = 0; j < board->lines; j++, space -= 1) {
+		my_putchar('*');
+		for (int i = 0; i != space; i++)
+			my_putchar(' ');
+		for (int counter = 0; counter != board->stick[j]; counter++)
+			my_putchar('|');
+		for (int temp = space + board->stick[j];
+		temp < (board->lines * 2 - 1); temp++)
+			my_putchar(' ');
+		my_putstr("*\n");
+	}
+	print_window_of_board(board->lines);
+}

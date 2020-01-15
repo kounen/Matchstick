@@ -7,19 +7,33 @@
 
 #include "matchstick.h"
 
-void initialise_structure(matchstick_t *matchstick_structure, char **argv)
+void initialise_structure(matchstick_t *structure, char **argv)
 {
-    matchstick_structure->nbr_lines = my_atoi(argv[1]);
-    matchstick_structure->max_matches = my_atoi(argv[2]);
+    structure->nbr_lines = my_atoi(argv[1]);
+    structure->max_matches = my_atoi(argv[2]);
+    structure->game_board = NULL;
 }
 
-void initialise_player_turn(matchstick_t *matchstick_structure)
+void initialise_player_turn(matchstick_t *structure)
 {
-    matchstick_structure->what_line = 0;
-    matchstick_structure->how_matches = 0;
+    structure->what_line = 0;
+    structure->how_matches = 0;
 }
 
-void destroy_structure(matchstick_t *matchstick)
+void create_game_board(matchstick_t *structure)
 {
-    free(matchstick);
+    int sticks_nbr = 1;
+
+    structure->game_board = malloc(sizeof(int) * (structure->nbr_lines + 1));
+    structure->game_board[0] = 1;
+    for (int line = 1; line < structure->nbr_lines; line = line + 1) {
+        sticks_nbr = sticks_nbr + 2;
+        structure->game_board[line] = sticks_nbr;
+    }
+}
+
+void destroy_structure(matchstick_t *structure)
+{
+    free(structure->game_board);
+    free(structure);
 }

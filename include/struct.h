@@ -14,6 +14,7 @@ typedef struct matchstick
     int max_matches;
     int what_line;
     int how_matches;
+    int *game_board;
 } matchstick_t;
 
 #endif /* !STRUCT_H_ */

@@ -16,6 +16,7 @@
 #include <fcntl.h>
 #include <stdarg.h>
 #include <limits.h>
+#include <stdio.h>
 
 char *print_pointer(long long index);
 int unit_size(int nb);
@@ -46,3 +47,18 @@ char *my_strcat(char *string_one, char *string_two);
 int my_strcmp(char const *str_one, char const *str_two);
 
 #endif /* !MY_H_ */
+
+#ifndef GET_NEXT_LINE_H_
+#define GET_NEXT_LINE_H_
+
+int my_find_backslash_n(char *string);
+int str_len(char const *string);
+char *my_concat_string(char *string_one, char *string_two, int len_two);
+char *rest_buf(char *string);
+char *get_next_line(int fd);
+
+#endif /* !GET_NEXT_LINE_H_ */
+
+#ifndef READ_SIZE
+#define READ_SIZE (2)
+#endif /* !READ_SIZE */

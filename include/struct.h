@@ -8,4 +8,12 @@
 #ifndef STRUCT_H_
 #define STRUCT_H_
 
+typedef struct matchstick
+{
+    int nbr_lines;
+    int max_matches;
+    int what_line;
+    int how_matches;
+} matchstick_t;
+
 #endif /* !STRUCT_H_ */

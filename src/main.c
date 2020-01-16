@@ -36,6 +36,9 @@ int check_collect_matches(matchstick_t *structure)
     } if (structure->how_matches <= 0) {
         my_printf("Error: you have to remove at least one match\n");
         return (TRUE);
+    } if (structure->how_matches > structure->game_board[structure->what_line - 1]) {
+        my_printf("Error: not enough matches on this line\n");
+        return (TRUE);
     }
     return (SUCCESS);
 }
@@ -58,7 +61,7 @@ void player_turn(matchstick_t *structure)
     collect_and_check(structure);
     my_printf("Player removed %d match(es) ", structure->how_matches);
     my_printf("from line %d\n", structure->what_line);
-    update_board(structure);
+    display_update_board(structure);
 }
 
 int game_loop(matchstick_t *structure)
@@ -80,6 +83,7 @@ int main(int argc, char *argv[])
     if (check_error_and_manual(argc, argv) == ERROR)
         return (ERROR);
     initialise_structure(structure, argv);
+    create_game_board(structure);
     display_game_board(structure->nbr_lines);
     who_win = game_loop(structure);
     destroy_structure(structure);

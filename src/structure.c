@@ -30,7 +30,7 @@ void create_game_board(matchstick_t *structure)
         sticks_nbr = sticks_nbr + 2;
         structure->game_board[line] = sticks_nbr;
     }
-    structure->game_board[structure->nbr_lines + 1] = '\0';
+    structure->game_board[structure->nbr_lines] = '\0';
 }
 
 void destroy_structure(matchstick_t *structure)

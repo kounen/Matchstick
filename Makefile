@@ -14,6 +14,7 @@ RM		=	rm -f
 SRCS	=	./src/main.c \
 			./src/manual.c \
 			./src/display_board.c \
+			./src/collect.c \
 			./src/structure.c \
 			./src/check_error.c
 

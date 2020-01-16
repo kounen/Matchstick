@@ -17,6 +17,7 @@
 #include <stdarg.h>
 #include <limits.h>
 #include <stdio.h>
+#include <time.h>
 
 char *print_pointer(long long index);
 int unit_size(int nb);

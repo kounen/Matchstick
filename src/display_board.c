@@ -52,7 +52,6 @@ void display_update_board(matchstick_t *structure)
         write(1, "*\n", 2);
     }
     board_line(structure->nbr_lines);
-    write(1, "\n", 1);
 }
 
 void display_update_board_ai(matchstick_t *structure)
@@ -74,5 +73,4 @@ void display_update_board_ai(matchstick_t *structure)
         write(1, "*\n", 2);
     }
     board_line(structure->nbr_lines);
-    write(1, "\n", 1);
 }

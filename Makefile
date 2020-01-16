@@ -14,6 +14,10 @@ RM		=	rm -f
 SRCS	=	./src/main.c \
 			./src/manual.c \
 			./src/display_board.c \
+			./src/player_turn.c \
+			./src/game_loop.c \
+			./src/ai_turn.c \
+			./src/is_there_a_winner.c \
 			./src/collect.c \
 			./src/structure.c \
 			./src/check_error.c

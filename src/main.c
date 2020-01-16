@@ -14,6 +14,16 @@ void player_turn(matchstick_t *structure)
     my_printf("Player removed %d match(es) ", structure->how_matches);
     my_printf("from line %d\n", structure->what_line);
     display_update_board(structure);
+    structure->who_is_the_winner = 1;
+}
+
+void ai_turn(matchstick_t *structure)
+{
+    initialise_ai_turn(structure);
+    my_printf("AI removed %d match(es) ", structure->how_matches_ai);
+    my_printf("from line %d\n", structure->what_line_ai);
+    display_update_board_ai(structure);
+    structure->who_is_the_winner = 2;
 }
 
 int game_loop(matchstick_t *structure)
@@ -22,7 +32,7 @@ int game_loop(matchstick_t *structure)
         my_printf("Your turn:\n");
         player_turn(structure);
         my_printf("AI's turn...\n");
-        //ia_turn(structure);
+        ai_turn(structure);
     }
     return (SUCCESS);
 }

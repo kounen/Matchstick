@@ -54,3 +54,25 @@ void display_update_board(matchstick_t *structure)
     board_line(structure->nbr_lines);
     write(1, "\n", 1);
 }
+
+void display_update_board_ai(matchstick_t *structure)
+{
+    int space = structure->nbr_lines - 1;
+
+    structure->game_board[structure->what_line_ai - 1] -= \
+    structure->how_matches_ai;
+    board_line(structure->nbr_lines);
+    for (int line = 0; line < structure->nbr_lines; line++, space = space - 1) {
+        write(1, "*", 1);
+        for (int i = 0; i < space; i = i + 1)
+            write(1, " ", 1);
+        for (int i = 0; i < structure->game_board[line]; i = i + 1)
+            write(1, "|", 1);
+        for (int i = (structure->game_board[line] + space);
+            i < (structure->nbr_lines * 2 - 1); i = i + 1)
+            write(1, " ", 1);
+        write(1, "*\n", 2);
+    }
+    board_line(structure->nbr_lines);
+    write(1, "\n", 1);
+}

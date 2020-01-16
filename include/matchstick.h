@@ -17,6 +17,8 @@
 
 int check_error_and_manual(int ac, char **argv);
 char *collect_stdin(void);
+void initialise_ai_turn(matchstick_t *structure);
+void display_update_board_ai(matchstick_t *structure);
 int check_collect_line(matchstick_t *structure);
 int check_collect_matches(matchstick_t *structure);
 void collect_and_check(matchstick_t *structure);

@@ -10,10 +10,13 @@
 
 typedef struct matchstick
 {
+    int who_is_the_winner;
     int nbr_lines;
     int max_matches;
     int what_line;
     int how_matches;
+    int what_line_ai;
+    int how_matches_ai;
     int *game_board;
 } matchstick_t;
 

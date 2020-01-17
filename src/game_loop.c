@@ -11,7 +11,8 @@ int game_loop(matchstick_t *structure)
 {
     while (1) {
         my_printf("Your turn:\n");
-        player_turn(structure);
+        if (player_turn(structure) == ERROR)
+            return (0);
         if (is_there_a_winner(structure) == AI_WIN)
             return (AI_WIN);
         my_printf("AI's turn...\n");

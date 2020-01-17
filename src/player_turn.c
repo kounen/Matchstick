@@ -7,12 +7,14 @@
 
 #include "matchstick.h"
 
-void player_turn(matchstick_t *structure)
+int player_turn(matchstick_t *structure)
 {
     initialise_player_turn(structure);
-    collect_and_check(structure);
+    if (collect_and_check(structure) == ERROR)
+        return (ERROR);
     my_printf("Player removed %d match(es) ", structure->how_matches);
     my_printf("from line %d\n", structure->what_line);
     display_update_board(structure);
     structure->who_is_the_winner = AI_WIN;
+    return (SUCCESS);
 }

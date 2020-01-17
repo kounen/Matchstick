@@ -33,12 +33,13 @@ void destroy_structure(matchstick_t *matchstick);
 ////////////////////////////////////////////////////////////////////////////////
 
 /*PLAYER_TURN*/
-void player_turn(matchstick_t *structure);
+int player_turn(matchstick_t *structure);
 void initialise_player_turn(matchstick_t *structure);
-char *collect_stdin(void);
-void collect_and_check(matchstick_t *structure);
-int check_collect_line(matchstick_t *structure);
-int check_collect_matches(matchstick_t *structure);
+//char *collect_stdin(void);
+int collect_input(char **input, size_t *size, int print_message);
+int collect_and_check(matchstick_t *structure);
+int check_collect_line(matchstick_t *structure, char *input);
+int check_collect_matches(matchstick_t *structure, char *input);
 void display_update_board(matchstick_t *structure);
 ////////////////////////////////////////////////////////////////////////////////
 

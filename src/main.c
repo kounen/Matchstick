@@ -17,6 +17,7 @@ int main(int argc, char *argv[])
     initialise_structure(structure, argv);
     create_game_board(structure);
     display_game_board(structure->nbr_lines);
+    srandom(time(NULL));
     who_win = game_loop(structure);
     destroy_structure(structure);
     return (who_win);

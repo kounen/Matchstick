@@ -12,7 +12,6 @@ void find_ai_line(matchstick_t *structure)
     int line_ai = 0;
 
     do {
-        srandom(time(NULL));
         line_ai = random() % structure->nbr_lines + 1;
     } while (structure->game_board[line_ai - 1] == 0);
     structure->what_line_ai = line_ai;
@@ -26,7 +25,6 @@ void find_ai_matches(matchstick_t *structure)
         structure->how_matches_ai = 1;
     else {
         do {
-            srandom(time(NULL));
             matches_ai = random() % \
             structure->game_board[structure->what_line_ai - 1] + 1;
         } while (matches_ai == 0 || matches_ai > structure->max_matches);

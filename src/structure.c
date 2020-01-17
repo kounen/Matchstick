@@ -13,18 +13,14 @@ void initialise_structure(matchstick_t *structure, char **argv)
     structure->max_matches = my_atoi(argv[2]);
     structure->game_board = NULL;
     structure->who_is_the_winner = 0;
+    structure->what_line_ai = 0;
+    structure->how_matches_ai = 0;
 }
 
 void initialise_player_turn(matchstick_t *structure)
 {
     structure->what_line = 0;
     structure->how_matches = 0;
-}
-
-void initialise_ai_turn(matchstick_t *structure)
-{
-    structure->what_line_ai = 0;
-    structure->how_matches_ai = 0;
 }
 
 void create_game_board(matchstick_t *structure)

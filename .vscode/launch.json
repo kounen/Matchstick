@@ -10,7 +10,7 @@
             "request": "launch",
             "preLaunchTask": "make program",
             "program": "${workspaceFolder}/matchstick",
-            "args": ["5", "5"],
+            "args": ["4", "5"],
             "stopAtEntry": true,
             "cwd": "${workspaceFolder}",
             "environment": [],

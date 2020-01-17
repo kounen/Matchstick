@@ -29,7 +29,7 @@ void find_ai_matches(matchstick_t *structure)
             structure->game_board[structure->what_line_ai - 1] + 1;
         } while (matches_ai == 0 || matches_ai > structure->max_matches);
         if (structure->game_board[structure->what_line_ai - 1] - \
-            matches_ai == 0)
+        matches_ai == 0)
             structure->how_matches_ai = matches_ai - 1;
         else
             structure->how_matches_ai = matches_ai;

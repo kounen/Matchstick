@@ -35,7 +35,6 @@ void destroy_structure(matchstick_t *matchstick);
 /*PLAYER_TURN*/
 int player_turn(matchstick_t *structure);
 void initialise_player_turn(matchstick_t *structure);
-//char *collect_stdin(void);
 int collect_input(char **input, size_t *size, int print_message);
 int collect_and_check(matchstick_t *structure);
 int check_collect_line(matchstick_t *structure, char *input);

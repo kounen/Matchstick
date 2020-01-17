@@ -9,12 +9,22 @@
 
 void find_ai_line(matchstick_t *structure)
 {
-    ;
+    srandom(time(NULL));
+    int line_ai = random() % structure->nbr_lines;
+    if (structure->game_board[line_ai - 1] == 0)
+        find_ai_line(structure);
+    else
+        structure->what_line_ai = line_ai;
 }
 
 void find_ai_matches(matchstick_t *structure)
 {
-    ;
+    srand(time(NULL));
+    int matches_ai = random() % structure->game_board[structure->what_line_ai - 1];
+    if (structure->game_board[structure->what_line_ai - 1] == 1)
+        structure->how_matches_ai = structure->game_board[structure->what_line_ai - 1];
+    if (matches_ai == 0 || matches_ai > structure->max_matches)
+        find_ai_matches(structure);
 }
 
 void find_ai_values(matchstick_t *structure)

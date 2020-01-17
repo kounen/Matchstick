@@ -14,27 +14,40 @@
 #define SUCCESS (0)
 #define ERROR (84)
 #define TRUE (1)
-#define AI_WIN (2)
 #define PLAYER_WIN (1)
+#define AI_WIN (2)
 
+/*BEFORE_ALGO*/
 int check_error_and_manual(int ac, char **argv);
+void manual(void);
+////////////////////////////////////////////////////////////////////////////////
+
+/*MAIN_FUNCTION*/
+void initialise_structure(matchstick_t *structure, char **argv);
+void create_game_board(matchstick_t *structure);
+void board_line(int nbr_lines);
+void display_game_board(int nbr_lines);
+int game_loop(matchstick_t *structure);
+int is_there_a_winner(matchstick_t *structure);
+void destroy_structure(matchstick_t *matchstick);
+////////////////////////////////////////////////////////////////////////////////
+
+/*PLAYER_TURN*/
+void player_turn(matchstick_t *structure);
+void initialise_player_turn(matchstick_t *structure);
 char *collect_stdin(void);
-void initialise_ai_turn(matchstick_t *structure);
-void display_update_board_ai(matchstick_t *structure);
+void collect_and_check(matchstick_t *structure);
 int check_collect_line(matchstick_t *structure);
 int check_collect_matches(matchstick_t *structure);
-void collect_and_check(matchstick_t *structure);
-void initialise_structure(matchstick_t *structure, char **argv);
-void initialise_player_turn(matchstick_t *structure);
-void player_turn(matchstick_t *structure);
-int game_loop(matchstick_t *structure);
-void ai_turn(matchstick_t *structure);
-int is_there_a_winner(matchstick_t *structure);
-void create_game_board(matchstick_t *structure);
-void destroy_structure(matchstick_t *matchstick);
 void display_update_board(matchstick_t *structure);
-void display_game_board(int nbr_lines);
-void board_line(int nbr_lines);
-void manual(void);
+////////////////////////////////////////////////////////////////////////////////
+
+/*AI_TURN*/
+void ai_turn(matchstick_t *structure);
+void find_ai_values(matchstick_t *structure);
+void find_ai_line(matchstick_t *structure);
+void find_ai_matches(matchstick_t *structure);
+void display_update_board_ai(matchstick_t *structure);
+////////////////////////////////////////////////////////////////////////////////
 
 #endif /* !MATCHSTICK_H_ */

@@ -47,4 +47,4 @@ matches is a positive maximum number matches > 0.<br>
 <strong>03.5 - More full games</strong><br>
 <em>4/4</em> : 100%<br>
 <strong>04 - AI effectiveness</strong><br>
-<em>9/10</em> : 60%<br>
+<em>6/10</em> : 60%<br>

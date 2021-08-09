@@ -1,6 +1,6 @@
-Matchstick
+# Matchstick
 
-[alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Pyramidal_matches.svg/800px-Pyramidal_matches.svg.png)
+![alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Pyramidal_matches.svg/800px-Pyramidal_matches.svg.png)
 
 This game is actually called Marienbad's game. There are 2 
 players, here a human and an AI. The winner is the one who
